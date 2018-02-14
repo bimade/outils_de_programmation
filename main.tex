@@ -1,0 +1,98 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Version 1.0 (10/12/16)
+% author: Imad Eddine Bousbaa (bousbaa.imadeddine@gmail.com)
+% License: CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% used teplates: title page
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Stylish Colored Title Page 
+% LaTeX Template
+% Version 1.0 (27/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Peter Wilson (herries.press@earthlink.net)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt,oneside]{book}
+    \usepackage[utf8]{inputenc} %Required for encoding text
+    \usepackage[T1]{fontenc}
+    \usepackage{chngpage}
+    \usepackage[francais]{babel}
+    \usepackage[svgnames]{xcolor} % Required to specify font color
+    \usepackage{hyperref} % lien hypertext
+    \usepackage{graphicx} % Required for box manipulation
+    \usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry} %editing the marge of the the document
+    \usepackage{tikz}
+    \usetikzlibrary{matrix}
+    
+    %----------------------------------------------------------------------------------------
+    %	TITLE PAGE
+    %----------------------------------------------------------------------------------------
+    
+    \newcommand*{\rotrt}[1]{\rotatebox{90}{#1}} % Command to rotate right 90 degrees
+    \newcommand*{\rotlft}[1]{\rotatebox{-90}{#1}} % Command to rotate left 90 degrees
+    \newcommand*{\titleBC}{\begingroup % Create the command for including the title page in the document
+    
+    \centering % Center all text
+    
+    \def\CP{\textit{\Huge Outils de Programmation}} % Title
+    
+    \settowidth{\unitlength}{\CP} % Set the width of the curly brackets to the width of the title
+    {\color{LightGoldenrod}\resizebox*{\unitlength}{\baselineskip}{\rotrt{$\}$}}} \\[\baselineskip] % Print top curly bracket
+    \textcolor{Sienna}{\CP} \\[\baselineskip] % Print title
+    {\color{RosyBrown}\Large Cours de troisième année, licence recherche opérationnelle} \\ % Tagline or further description
+    {\color{LightGoldenrod}\resizebox*{\unitlength}{\baselineskip}{\rotlft{$\}$}}} % Print bottom curly bracket
+    \changepage{0cm}%amount added to textheight
+               {}%amount added to textwidth
+               {}%amount added to evensidemargin
+               {}%amount added to oddsidemargin
+               {}%amount added to columnsep
+               {6cm}%amount added to topmargin
+               {}%amount added to headheight
+               {}%amount added to headsep
+               {}%amount added to footskip
+    \vfill % Whitespace between the title and the author name
+    
+    {\Large\textbf{Imad Eddine Bousbaa}}\\ % Author name
+    
+    \vfill % Whitespace between the author name and the publisher logo
+    
+    2018 % Year published
+    
+    \endgroup}
+    
+    %----------------------------------------------------------------------------------------
+    %	BLANK DOCUMENT
+    %----------------------------------------------------------------------------------------
+    
+    \begin{document} 
+    
+    \pagestyle{empty} % Removes page numbers
+    \titleBC% This command includes the title page
+    \newpage
+    
+    \tableofcontents
+    \newpage
+    
+    \part{Envirenement de programmation}
+    \include{envirement}
+    \part{Programmation avancée}
+    \include{programmation}
+    \part{Logiciel de Calcul : SageMath}
+    \include{sage}
+    \part{Logiciel d'optimisation linéraire : Gusek}
+    \include{guesk}
+    \end{document}
